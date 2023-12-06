@@ -22,3 +22,10 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 5. The Data Studio SQL Server Schema Compare extension was installed and leveraged to migrate the schema from the on-premise database to the Azure SQL database.
 6. The Data Studio Azure SQL Migration extension was installed and used to facilitate the transfer of data from the on-premise database to the Azure SQL database.
 7. The transferred data was inspected to confirm the success of the data migration process.
+
+## Data Back-up and Restoration
+1. A full backup was generated of the on-premises database using SQL Server Management Studio.
+2. This backup file was stored on a newly created Azure Blob Storage Container.
+3. A developmental Windows VM was created and a remote connection was established via RDP protocol. SQL Server and SSMS were installed on the new developmental VM.
+4. The database was restored using the backup file stored in the Azure blob storage container. Now a complete replica database of our production VM was available.
+5. SSMS Management Task Wizard was utilized to configure a weekly backup schedule to the Azure Blob Storage. This was achieved by creating an SQL Server credential and using the job scheduler to set up a weekly backup schedule.
