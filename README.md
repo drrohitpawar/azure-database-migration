@@ -51,5 +51,8 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 2. A successful connection was established to the database with the new credentials.
 3. A new user "Rohit_DB_Reader" was created via the Azure portal.
 4. The below query was performed to give the user read-only access.
+![alt text](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Create%20db_datareader%20role.jpg)
 5. A successful connection was established with the new user credentials.
 6. The below queries were run to demonstrate the new user had read-only access and is unable to write data/make changes.
+![alt text](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Create%20db_datareader%20role.jpg)
+![alt text](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Create%20db_datareader%20role.jpg)
