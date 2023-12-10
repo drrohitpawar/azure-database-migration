@@ -46,3 +46,6 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 6. A tailback test was performed to revert the primary server back to the original server in UK south.
 7. This test was useful in demonstrating the disaster recovery environment's functionality. Failover tests should be performed regularly to ensure it is ready for a real disaster recovery.
 
+## Microsoft Entra Directory Integration
+1. Microsoft Entra ID authentication was enabled by setting an admin via the Azure portal.
+2. 
