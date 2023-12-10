@@ -29,3 +29,12 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 3. A developmental Windows VM was created and a remote connection was established via RDP protocol. SQL Server and SSMS were installed on the new developmental VM.
 4. The database was restored using the backup file stored in the Azure blob storage container. Now a complete replica database of our production VM was available.
 5. SSMS Management Task Wizard was utilized to configure a weekly backup schedule to the Azure Blob Storage. This was achieved by creating an SQL Server credential and using the job scheduler to set up a weekly backup schedule.
+
+## Disaster Recovery Simulation
+1. Data was manually erased from the database to simulate some data loss. Using the SQL queries attached, a column was deleted in the PersonAddress table and 5 rows of data were deleted from the PersonAddressType table.
+2. Data loss was confirmed by using a select query to examine the data.
+3. The database restore function was utilised via the Azure portal to create a new database to restore the production database in the state it was 2 hours previously. A new database was created and a new connection was established via Azure Data Studio.
+4. The new database was examined to confirm the lost data was recovered.
+5. The old database was deleted via the Azure Portal.
+
+
