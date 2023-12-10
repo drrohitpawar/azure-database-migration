@@ -33,8 +33,16 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 ## Disaster Recovery Simulation
 1. Data was manually erased from the database to simulate some data loss. Using the SQL queries attached, a column was deleted in the PersonAddress table and 5 rows of data were deleted from the PersonAddressType table.
 2. Data loss was confirmed by using a select query to examine the data.
-3. The database restore function was utilised via the Azure portal to create a new database to restore the production database in the state it was 2 hours previously. A new database was created and a new connection was established via Azure Data Studio.
+3. The database restore function was utilized via the Azure portal to create a new database to restore the production database in the state it was 2 hours previously. A new database was created and a new connection was established via Azure Data Studio.
 4. The new database was examined to confirm the lost data was recovered.
 5. The old database was deleted via the Azure Portal.
 
+## Geo-replication and Failover
+1. To test geo-replication and failover, the Azure database replica function was utilized. A new server 'sql-replication-server' was created in a different region (in this case North Europe as opposed to UK south of the primary database).
+2. A failover group was then generated on the original server to allow failover to the secondary server.
+3. A failover test was completed which successfully shifted the primary server to the Northern Europe server.
+4. A new connection was established to the new primary server located in Northern Europe.
+5. The data was inspected via Azure Data Studio to ensure all tables were still present and no data loss occurred. 'SELECT COUNT(*) FROM table_name' queries were performed before and after failover on a random selection of tables in the database to ensure no rows of data were lost.
+6. A tailback test was performed to revert the primary server back to the original server in UK south.
+7. This test was useful in demonstrating the disaster recovery environment's functionality. Failover tests should be performed regularly to ensure it is ready for a real disaster recovery.
 
