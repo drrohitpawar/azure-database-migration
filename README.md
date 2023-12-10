@@ -47,5 +47,9 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 7. This test was useful in demonstrating the disaster recovery environment's functionality. Failover tests should be performed regularly to ensure it is ready for a real disaster recovery.
 
 ## Microsoft Entra Directory Integration
-1. Microsoft Entra ID authentication was enabled by setting an admin via the Azure portal.
-2. 
+1. Microsoft Entra ID authentication was enabled and an admin was set via the Azure portal.
+2. A successful connection was established to the database with the new credentials.
+3. A new user "Rohit_DB_Reader" was created via the Azure portal.
+4. The below query was performed to give the user read-only access.
+5. A successful connection was established with the new user credentials.
+6. The below queries were run to demonstrate the new user had read-only access and is unable to write data/make changes.
