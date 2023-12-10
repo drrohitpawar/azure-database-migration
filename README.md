@@ -6,6 +6,8 @@ I begin by establishing a production environment database. Subsequently, I migra
 A pivotal phase of the project involved simulating a disaster recovery scenario with potential data loss. Furthermore, I explore the complexities of geo-replication and failover configuration to ensure data availability even under challenging conditions.
 To enhance security, I employ Microsoft Entra ID integration to define access roles, adding an extra layer of control and protection.
 
+![](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Copy%20of%20Azure%20Project%20Diagram.jpeg)
+
 ## Setting up the production environment
 1. Azure account and subscription set up.
 2. Using the Azure portal, a Windows virtual machine was set up to serve as the production environment.
