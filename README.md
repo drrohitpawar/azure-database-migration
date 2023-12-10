@@ -54,5 +54,5 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 ![alt text](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Create%20db_datareader%20role.jpg)
 5. A successful connection was established with the new user credentials.
 6. The below queries were run to demonstrate the new user had read-only access and is unable to write data/make changes.
-![alt text](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Create%20db_datareader%20role.jpg)
+![alt text](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Select%20query.jpg)
 ![alt text](https://github.com/drrohitpawar/azure-database-migration710/blob/main/Images/Delete%20query.jpg)
