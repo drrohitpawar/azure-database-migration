@@ -13,11 +13,11 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 2. Using the Azure portal, a Windows virtual machine was set up to serve as the production environment.
 3. Appropriate network and firewall settings were configured and a secure connection was established using the RDP protocol.
    - This was done by ensuring that the RDP port (port 3389) was allowed in the NSG inbound rules for the VM.
-![]()
+![](https://github.com/drrohitpawar/azure-database-migration/blob/main/Images/network.png)
 4. SQL Server and SQL Server Management Studio (SSMS) were installed on the virtual machine.
 5. The production database was set up by restoring the database from a backup file (AdventureWorks2022.bak).
    - This was achieved by utilizing the restore database function on SSMS. Right-click on Databases and select 'restore database.' Select the .bak file and select OK. This will restore the database.
-![]()
+![](https://github.com/drrohitpawar/azure-database-migration/blob/main/Images/backup.jpg)
 6. The production database was now set up and ready for use.
 
 ## Migration to Azure SQL Database
@@ -27,7 +27,7 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 4. A connection was made to both the local database and the Azure SQL database via Data Studio.
 5. The Data Studio SQL Server Schema Compare extension was installed and leveraged to migrate the schema from the on-premise database to the Azure SQL database.
     - The local database was selected as the source and the Azure SQL database was selected as the target
-![]()
+![](https://github.com/drrohitpawar/azure-database-migration/blob/main/Images/compare.jpg)
 6. The Data Studio Azure SQL Migration extension was installed and used to facilitate the transfer of data from the on-premise database to the Azure SQL database.
     - Right-click the local database and then click 'Manage' and select Azure SQL Migration.
     - Data Studio will lead you through the process of migrating the database.
@@ -43,7 +43,7 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 3. A developmental Windows VM was created and a remote connection was established via RDP protocol. SQL Server and SSMS were installed on the new developmental VM.
 4. The database was restored using the backup file stored in the Azure blob storage container. Now a complete replica database of our production VM was available.
    - The image below is from SSMS on the development VM showing the successful replication database.
-![]()
+![](https://github.com/drrohitpawar/azure-database-migration/blob/main/Images/development.jpg)
 5. SSMS Management Task Wizard was utilized to configure a weekly backup schedule to the Azure Blob Storage. This was achieved by creating an SQL Server credential and using the job scheduler to set up a weekly backup schedule.
    - This may be essential for any business to ensure data protection and data recovery in the event of a data loss event. It may also be required due to regulatory and compliance requirements.
 
@@ -51,11 +51,11 @@ To enhance security, I employ Microsoft Entra ID integration to define access ro
 1. Data was manually erased from the database to simulate some data loss. Using the SQL queries attached, a column was deleted in the PersonAddress table and 5 rows of data were deleted from the PersonAddressType table.
 2. Data loss was confirmed by using a select query to examine the data.
    - In the below image, you can see AddressLine1 column has been deleted.
-![]()
+![](https://github.com/drrohitpawar/azure-database-migration/blob/main/Images/prerec.jpg)
 3. The database restore function was utilized via the Azure portal to create a new database to restore the production database in the state it was 2 hours previously. A new database was created and a new connection was established via Azure Data Studio.
 4. The new database was examined to confirm the lost data was recovered.
    - In the below image, you can see the previously deleted column has been restored.
-![]()
+![](https://github.com/drrohitpawar/azure-database-migration/blob/main/Images/postrec.jpg)
 5. The old database was deleted via the Azure Portal.
 
 ## Geo-replication and Failover
